@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SkillPath - Career Recommendation System</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            <span>SkillPath</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#recommendations">Recommendations</a>
+            <a href="#assistant">AI Assistant</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero"
+             id="home">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                ✨ Personalized Career Guidance
+            </span>
+
+            <h1>
+                Build the skills
+                <span>your career needs.</span>
+            </h1>
+
+            <p>
+                Tell us about your education, interests and current
+                skills. SkillPath will create a personalized learning
+                direction for you.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard">
+
+
+        <!-- =========================================
+             LEFT SIDE - STUDENT PROFILE
+        ========================================== -->
+
+        <section class="card profile-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="small-label">
+                        STEP 01
+                    </span>
+
+                    <h2>
+                        Student Profile
+                    </h2>
+
+                    <p>
+                        Tell us about yourself.
+                    </p>
+                </div>
+
+                <div class="section-icon">
+                    👤
+                </div>
+
+            </div>
+
+
+            <form id="studentForm">
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="studentName">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- EDUCATION -->
+
+                <div class="form-group">
+
+                    <label for="education">
+                        Education Level
+                    </label>
+
+                    <select
+                        id="education"
+                        required
+                    >
+
+                        <option value="">
+                            Select education level
+                        </option>
+
+                        <option value="12th">
+                            12th
+                        </option>
+
+                        <option value="diploma">
+                            Diploma
+                        </option>
+
+                        <option value="graduation">
+                            Graduation
+                        </option>
+
+                        <option value="mca">
+                            MCA
+                        </option>
+
+                        <option value="mba">
+                            MBA
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CAREER GOAL -->
+
+                <div class="form-group">
+
+                    <label for="careerGoal">
+                        Career Goal
+                    </label>
+
+                    <select
+                        id="careerGoal"
+                        required
+                    >
+
+                        <option value="">
+                            Select education first
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- INTERESTS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Interests
+                    </label>
+
+                    <div
+                        class="checkbox-container"
+                        id="interestBox"
+                    >
+
+                        <span class="placeholder-text">
+                            Select education first
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CURRENT SKILLS -->
+
+                <div class="form-group">
+
+                    <label>
+                        Current Skills
+                    </label>
+
+                    <div
+                        class="checkbox-container"
+                        id="skillBox"
+                    >
+
+                        <span class="placeholder-text">
+                            Select education first
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EXPERIENCE -->
+
+                <div class="form-group">
+
+                    <label for="experience">
+                        Experience Level
+                    </label>
+
+                    <select
+                        id="experience"
+                        required
+                    >
+
+                        <option value="">
+                            Select experience level
+                        </option>
+
+                        <option value="beginner">
+                            Beginner
+                        </option>
+
+                        <option value="intermediate">
+                            Intermediate
+                        </option>
+
+                        <option value="advanced">
+                            Advanced
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    Get My Recommendations
+
+                    <span>→</span>
+
+                </button>
+
+
+                <p
+                    id="formStatus"
+                    class="form-status"
+                ></p>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =========================================
+             CENTER - RECOMMENDATIONS
+        ========================================== -->
+
+        <section
+            class="card recommendation-card"
+            id="recommendations"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="small-label">
+                        STEP 02
+                    </span>
+
+                    <h2>
+                        Your Recommendations
+                    </h2>
+
+                    <p>
+                        Personalized based on your profile.
+                    </p>
+
+                </div>
+
+                <div class="section-icon">
+                    🎯
+                </div>
+
+            </div>
+
+
+            <!-- SKILLS -->
+
+            <div class="recommendation-section">
+
+                <div class="sub-heading">
+
+                    <div>
+
+                        <h3>
+                            Skills to Learn
+                        </h3>
+
+                        <p>
+                            Skills that can help you move
+                            toward your career goal.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="skillsContainer"
+                    class="skills-grid"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            ✦
+                        </div>
+
+                        <p>
+                            Complete your profile and click
+                            <strong>
+                                Get My Recommendations
+                            </strong>.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSES -->
+
+            <div class="recommendation-section">
+
+                <div class="sub-heading">
+
+                    <div>
+
+                        <h3>
+                            Recommended Courses
+                        </h3>
+
+                        <p>
+                            Courses related to your career path.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="text-button"
+                        id="viewCoursesBtn"
+                    >
+                        View All
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="coursesContainer"
+                    class="courses-list"
+                >
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            📚
+                        </div>
+
+                        <p>
+                            Your recommended courses
+                            will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEARNING PATH -->
+
+            <div class="learning-path">
+
+                <div class="sub-heading">
+
+                    <div>
+
+                        <h3>
+                            Suggested Learning Path
+                        </h3>
+
+                        <p>
+                            A simple direction to follow.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="path">
+
+                    <div class="learning-step">
+
+                        <span>1</span>
+
+                        <p id="path1">
+                            Complete Profile
+                        </p>
+
+                    </div>
+
+
+                    <div class="path-arrow">
+                        →
+                    </div>
+
+
+                    <div class="learning-step">
+
+                        <span>2</span>
+
+                        <p id="path2">
+                            Choose Goal
+                        </p>
+
+                    </div>
+
+
+                    <div class="path-arrow">
+                        →
+                    </div>
+
+
+                    <div class="learning-step">
+
+                        <span>3</span>
+
+                        <p id="path3">
+                            Learn Skills
+                        </p>
+
+                    </div>
+
+
+                    <div class="path-arrow">
+                        →
+                    </div>
+
+
+                    <div class="learning-step">
+
+                        <span>4</span>
+
+                        <p id="path4">
+                            Build Projects
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             RIGHT - AI ASSISTANT
+        ========================================== -->
+
+        <section
+            class="card ai-card"
+            id="assistant"
+        >
+
+            <div class="ai-header">
+
+                <div class="ai-title">
+
+                    <div class="robot">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            AI Career Assistant
+                        </h2>
+
+                        <p>
+                            Powered by Gemini
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <span class="online-dot">
+                    ● Online
+                </span>
+
+            </div>
+
+
+            <!-- CHAT -->
+
+            <div
+                id="chatBox"
+                class="chat-box"
+            >
+
+                <div class="ai-message">
+
+                    <div class="ai-avatar">
+                        ✦
+                    </div>
+
+                    <div class="message-content">
+
+                        <p>
+                            Hi! I'm your SkillPath AI
+                            career assistant.
+                        </p>
+
+                        <p>
+                            Complete your profile and ask me
+                            anything about skills, courses,
+                            projects or career preparation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div
+                id="chatStatus"
+                class="chat-status"
+            ></div>
+
+
+            <!-- INPUT -->
+
+            <div class="chat-input-area">
+
+                <input
+                    type="text"
+                    id="chatInput"
+                    placeholder="Ask about your career..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    id="sendButton"
+                >
+                    ➤
+                </button>
+
+            </div>
+
+
+            <p class="ai-note">
+                AI responses are generated by Gemini.
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section
+        class="about-section"
+        id="about"
+    >
+
+        <div class="about-inner">
+
+            <span class="small-label">
+                ABOUT SKILLPATH
+            </span>
+
+            <h2>
+                Learn skills that match
+                <span>your career goals.</span>
+            </h2>
+
+            <p>
+                SkillPath helps students understand which
+                skills, technologies and learning resources
+                can support their selected career direction.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <span>
+            © 2026 SkillPath
+        </span>
+
+        <span>
+            Developed by <strong>Ipsita Dash</strong>
+        </span>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
